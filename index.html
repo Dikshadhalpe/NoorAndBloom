@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noir & Bloom — Every Cup Tells a Story</title>
+<meta name="description" content="A premium coffee house experience. Freshly brewed, expertly crafted, delivered with care.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= LOADER ================= -->
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="loader__cup" viewBox="0 0 100 100" width="64" height="64">
+    <path d="M20 35 H70 V60 a25 25 0 0 1 -25 25 H45 a25 25 0 0 1 -25 -25 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+    <path class="loader__steam" d="M35 30 C35 22, 45 22, 42 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="loader__steam loader__steam--2" d="M52 30 C52 22, 62 22, 59 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <a href="#home" class="navbar__logo" aria-label="Noir & Bloom home">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M5 10h16v6a8 8 0 0 1-8 8 8 8 0 0 1-8-8z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M21 12h2a3 3 0 0 1 0 6h-2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>Noir <em>&amp;</em> Bloom</span>
+    </a>
+
+    <nav class="navbar__links" id="navLinks" aria-label="Primary">
+      <a href="#home" class="navlink">Home</a>
+      <a href="#menu" class="navlink">Menu</a>
+      <a href="#about" class="navlink">About</a>
+      <a href="#gallery" class="navlink">Gallery</a>
+      <a href="#testimonials" class="navlink">Testimonials</a>
+      <a href="#contact" class="navlink">Contact</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <a href="#menu" class="btn btn--primary btn--sm">Order Now</a>
+      <button class="navbar__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero__bg" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1800&auto=format&fit=crop')"></div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__pour" aria-hidden="true">
+    <svg viewBox="0 0 6 400" preserveAspectRatio="none">
+      <path d="M3 0 L3 400" stroke="url(#pourGrad)" stroke-width="2" stroke-dasharray="6 10"/>
+      <defs>
+        <linearGradient id="pourGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#D4A373" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#D4A373" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#D4A373" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <div class="container hero__inner">
+    <p class="eyebrow reveal" data-reveal>Roasted in small batches, since 2014</p>
+    <h1 class="hero__title">
+      <span class="reveal" data-reveal>Every Cup</span>
+      <span class="reveal hero__title--accent" data-reveal>Tells a Story</span>
+    </h1>
+    <p class="hero__subtitle reveal" data-reveal>
+      A quiet corner for unhurried mornings — where beans are roasted with intention,
+      and every pour is a small ceremony worth slowing down for.
+    </p>
+    <div class="hero__actions reveal" data-reveal>
+      <a href="#menu" class="btn btn--primary">Order Now</a>
+      <a href="#menu" class="btn btn--ghost">Explore Menu</a>
+    </div>
+  </div>
+
+  <div class="hero__float" aria-hidden="true">
+    <svg width="120" height="120" viewBox="0 0 120 120">
+      <ellipse cx="60" cy="100" rx="34" ry="6" fill="#2C1810" opacity="0.08"/>
+      <path d="M30 40h60v22a30 30 0 0 1-30 30 30 30 0 0 1-30-30z" fill="#FFF8F0" stroke="#6F4E37" stroke-width="1.5"/>
+      <path d="M90 46h7a10 10 0 0 1 0 20h-7" fill="none" stroke="#6F4E37" stroke-width="1.5"/>
+      <path d="M45 36c0-7 8-7 8-14M62 36c0-7 8-7 8-14" stroke="#A67C52" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <button class="hero__scroll" id="scrollIndicator" aria-label="Scroll to next section">
+    <span></span>
+  </button>
+</section>
+
+<!-- ================= FEATURED COFFEE ================= -->
+<section class="section" id="menu">
+  <div class="container">
+    <p class="eyebrow reveal" data-reveal>The Selection</p>
+    <h2 class="section__title reveal" data-reveal>Featured Coffee</h2>
+    <p class="section__intro reveal" data-reveal>A curated handful of favorites, each cup balanced for body, brightness, and warmth.</p>
+
+    <div class="cards-grid reveal" data-reveal>
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=900&auto=format&fit=crop" alt="Single-origin pour-over coffee in a clear glass cup" loading="lazy">
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__top">
+            <h3>Ethiopian Pour-Over</h3>
+            <span class="rating" aria-label="Rated 4.9 out of 5">★ 4.9</span>
+          </div>
+          <p>Floral, bright, with notes of bergamot and stone fruit.</p>
+          <div class="product-card__bottom">
+            <span class="price">₹320</span>
+            <button class="btn btn--icon" aria-label="Add Ethiopian Pour-Over to cart">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=900&auto=format&fit=crop" alt="Creamy latte art in a ceramic cup" loading="lazy">
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__top">
+            <h3>Velvet Oat Latte</h3>
+            <span class="rating" aria-label="Rated 4.8 out of 5">★ 4.8</span>
+          </div>
+          <p>House espresso, steamed oat milk, a whisper of cinnamon.</p>
+          <div class="product-card__bottom">
+            <span class="price">₹280</span>
+            <button class="btn btn--icon" aria-label="Add Velvet Oat Latte to cart">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=900&auto=format&fit=crop" alt="Dark roast espresso shot with rich crema" loading="lazy">
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__top">
+            <h3>Midnight Espresso</h3>
+            <span class="rating" aria-label="Rated 5 out of 5">★ 5.0</span>
+          </div>
+          <p>Deep cocoa and roasted hazelnut, a bold double shot.</p>
+          <div class="product-card__bottom">
+            <span class="price">₹250</span>
+            <button class="btn btn--icon" aria-label="Add Midnight Espresso to cart">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=900&auto=format&fit=crop" alt="Iced cold brew coffee with ice cubes" loading="lazy">
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__top">
+            <h3>Slow Cold Brew</h3>
+            <span class="rating" aria-label="Rated 4.7 out of 5">★ 4.7</span>
+          </div>
+          <p>Steeped eighteen hours, smooth, low acidity, naturally sweet.</p>
+          <div class="product-card__bottom">
+            <span class="price">₹300</span>
+            <button class="btn btn--icon" aria-label="Add Slow Cold Brew to cart">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="section section--surface">
+  <div class="container">
+    <p class="eyebrow reveal" data-reveal>What Sets Us Apart</p>
+    <h2 class="section__title reveal" data-reveal>Why Choose Us</h2>
+
+    <div class="features-grid reveal" data-reveal>
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 14c0-5 3-9 7-9s7 4 7 9-3 6-7 6-7-1-7-6z"/><path d="M9 9c1-2 5-2 6 0"/></svg>
+        </div>
+        <h3>Premium Beans</h3>
+        <p>Sourced directly from small farms, chosen for character over volume.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        </div>
+        <h3>Expert Baristas</h3>
+        <p>Years of craft behind every pour, dialed in to the gram.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h13l4 4M3 12l4-4M3 12l4 4"/></svg>
+        </div>
+        <h3>Fast Delivery</h3>
+        <p>Hot, fresh, and at your door before the steam settles.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M9 21h6"/><path d="M12 17v4"/></svg>
+        </div>
+        <h3>Freshly Brewed</h3>
+        <p>Ground to order, brewed to the minute, never left waiting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="container about">
+    <div class="about__media reveal" data-reveal>
+      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=1000&auto=format&fit=crop" alt="Barista carefully preparing coffee behind the counter" loading="lazy">
+    </div>
+    <div class="about__content reveal" data-reveal>
+      <p class="eyebrow">Our Story</p>
+      <h2 class="section__title">A Decade of Quiet Mornings</h2>
+      <p>Noir & Bloom began as a single roaster in the back of a flower shop — hence
+        the name. What started as coffee for friends became a neighborhood ritual,
+        then a small chain, but the intention never changed: slow down, taste
+        carefully, and treat every cup like it matters.</p>
+      <p>Today our roasters and baristas still work the same way — small batches,
+        honest sourcing, and a counter that feels more like a living room than a
+        storefront.</p>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__num" data-count="10">0</span>
+          <span class="stat__label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="48000">0</span>
+          <span class="stat__label">Happy Customers</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="1200000">0</span>
+          <span class="stat__label">Cups Served</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEST SELLERS ================= -->
+<section class="section section--surface">
+  <div class="container">
+    <p class="eyebrow reveal" data-reveal>Customer Favorites</p>
+    <h2 class="section__title reveal" data-reveal>Best Sellers</h2>
+  </div>
+
+  <div class="scroller" id="bestSellers">
+    <div class="scroller__track">
+      <article class="best-card">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=700&auto=format&fit=crop" alt="Cappuccino with a heart-shaped latte art design" loading="lazy">
+        <h3>Heritage Cappuccino</h3>
+        <span class="price">₹260</span>
+      </article>
+      <article class="best-card">
+        <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=700&auto=format&fit=crop" alt="Mocha drink topped with chocolate shavings" loading="lazy">
+        <h3>Smoked Mocha</h3>
+        <span class="price">₹290</span>
+      </article>
+      <article class="best-card">
+        <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=700&auto=format&fit=crop" alt="Caramel macchiato layered in a tall glass" loading="lazy">
+        <h3>Salted Caramel Macchiato</h3>
+        <span class="price">₹310</span>
+      </article>
+      <article class="best-card">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=700&auto=format&fit=crop" alt="Flat white coffee with subtle latte art" loading="lazy">
+        <h3>Classic Flat White</h3>
+        <span class="price">₹270</span>
+      </article>
+      <article class="best-card">
+        <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80&w=700&auto=format&fit=crop" alt="Espresso cup with crema on a wooden table" loading="lazy">
+        <h3>Single Origin Espresso</h3>
+        <span class="price">₹230</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section" id="gallery">
+  <div class="container">
+    <p class="eyebrow reveal" data-reveal>Inside Noir & Bloom</p>
+    <h2 class="section__title reveal" data-reveal>Gallery</h2>
+
+    <div class="masonry reveal" data-reveal>
+      <div class="masonry__item masonry__item--tall"><img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?q=80&w=800&auto=format&fit=crop" alt="Cozy coffee shop interior with warm lighting" loading="lazy"></div>
+      <div class="masonry__item"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=800&auto=format&fit=crop" alt="Close-up of coffee beans on a wooden table" loading="lazy"></div>
+      <div class="masonry__item"><img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?q=80&w=800&auto=format&fit=crop" alt="Espresso machine in action behind the counter" loading="lazy"></div>
+      <div class="masonry__item masonry__item--tall"><img src="https://images.unsplash.com/photo-1504627298434-2119d6928e9e?q=80&w=800&auto=format&fit=crop" alt="Pour-over coffee being brewed" loading="lazy"></div>
+      <div class="masonry__item"><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=800&auto=format&fit=crop" alt="Latte art in a ceramic mug" loading="lazy"></div>
+      <div class="masonry__item"><img src="https://images.unsplash.com/photo-1442550528053-c431ecb55509?q=80&w=800&auto=format&fit=crop" alt="Coffee shop counter with pastries on display" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section section--surface" id="testimonials">
+  <div class="container">
+    <p class="eyebrow reveal" data-reveal>What People Say</p>
+    <h2 class="section__title reveal" data-reveal>Testimonials</h2>
+
+    <div class="testimonial-carousel reveal" data-reveal>
+      <div class="testimonial-carousel__track" id="testimonialTrack">
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"The flat white here genuinely changed my morning routine. Quiet, warm, and never rushed."</p>
+          <div class="testimonial-card__person">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop" alt="Portrait of Ananya R." loading="lazy">
+            <div><strong>Ananya R.</strong><span>Regular since 2021</span></div>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Best cold brew in the city, hands down. The space itself feels like a small retreat."</p>
+          <div class="testimonial-card__person">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Portrait of Kabir M." loading="lazy">
+            <div><strong>Kabir M.</strong><span>Local designer</span></div>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Every detail, from the cups to the playlist, feels considered. My favorite work-from-cafe spot."</p>
+          <div class="testimonial-card__person">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop" alt="Portrait of Priya S." loading="lazy">
+            <div><strong>Priya S.</strong><span>Writer</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="testimonial-carousel__dots" id="testimonialDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+<section class="newsletter">
+  <div class="container newsletter__inner reveal" data-reveal>
+    <h2>Stay Connected</h2>
+    <p>New roasts, seasonal drinks, and a little story in your inbox — once a month, never more.</p>
+    <form class="newsletter__form" id="newsletterForm">
+      <label for="newsletterEmail" class="sr-only">Email address</label>
+      <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+      <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+    <p class="newsletter__note" id="newsletterNote" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="container contact">
+    <div class="contact__form reveal" data-reveal>
+      <p class="eyebrow">Get in Touch</p>
+      <h2 class="section__title">Visit or Write to Us</h2>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">Send Message</button>
+        <p class="form-note" id="contactNote" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="contact__info reveal" data-reveal>
+      <div class="info-card">
+        <h3>Opening Hours</h3>
+        <ul>
+          <li><span>Mon – Fri</span><span>7:30 AM – 8:00 PM</span></li>
+          <li><span>Saturday</span><span>8:00 AM – 9:00 PM</span></li>
+          <li><span>Sunday</span><span>8:00 AM – 6:00 PM</span></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Location</h3>
+        <p>Marigold Lane, Bandra West, Mumbai, India</p>
+        <div class="map-placeholder" aria-label="Map showing Noir & Bloom location">
+          <svg width="100%" height="100%" viewBox="0 0 300 150" preserveAspectRatio="none">
+            <rect width="300" height="150" fill="#EFE7DC"/>
+            <path d="M0 90 Q80 60 150 90 T300 80" stroke="#D4A373" stroke-width="3" fill="none"/>
+            <circle cx="150" cy="80" r="6" fill="#6F4E37"/>
+          </svg>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8h2V4h-2a5 5 0 0 0-5 5v3H8v4h2v8h4v-8h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 5.8a8.4 8.4 0 0 1-2.4.9 3.8 3.8 0 0 0-6.6 2.6v1A9.6 9.6 0 0 1 4 6.6s-3 7 4.3 10A10.7 10.7 0 0 1 2 18.5c7 4 16 0 16-11.3 0-.2 0-.4 0-.6A6 6 0 0 0 22 5.8z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#home" class="navbar__logo">
+        <svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true"><path d="M5 10h16v6a8 8 0 0 1-8 8 8 8 0 0 1-8-8z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M21 12h2a3 3 0 0 1 0 6h-2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span>Noir <em>&amp;</em> Bloom</span>
+      </a>
+      <p>Small-batch roasted, quietly served, since 2014.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Working Hours</h4>
+      <p>Mon – Sat: 7:30 AM – 9:00 PM</p>
+      <p>Sunday: 8:00 AM – 6:00 PM</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Follow</h4>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8h2V4h-2a5 5 0 0 0-5 5v3H8v4h2v8h4v-8h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 5.8a8.4 8.4 0 0 1-2.4.9 3.8 3.8 0 0 0-6.6 2.6v1A9.6 9.6 0 0 1 4 6.6s-3 7 4.3 10A10.7 10.7 0 0 1 2 18.5c7 4 16 0 16-11.3 0-.2 0-.4 0-.6A6 6 0 0 0 22 5.8z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; 2026 dikshadhalpe All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
